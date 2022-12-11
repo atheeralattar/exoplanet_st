@@ -14,7 +14,7 @@ import glob
 #import RawDataSet as R
 from torch.utils.data import DataLoader
 import torch
-from torch.utils.tensorboard import SummaryWriter
+
 
 from torchmetrics.classification import BinaryPrecision, BinaryRecall,BinaryAccuracy,BinaryStatScores,Precision , BinaryAUROC,BinaryF1Score
 import ExoMinerRawVariation as ExoMinerRaw
