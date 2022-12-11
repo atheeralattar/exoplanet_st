@@ -5,3 +5,4 @@ lightkurve==2.3.0
 torch==1.7.1
 tess-point
 xmltodict
+torchmetrics
