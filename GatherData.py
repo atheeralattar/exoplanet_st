@@ -134,7 +134,7 @@ class GatherData():
             pass
         return obs
 
-    def GatherIdLcData(self,id,kind = 'First',quarters=None):
+    def GatherIdLcData(self,id,kind = 'All',quarters=None):
         """
         id, type st:, Use 'WrapperID' string that is located in the self.IdDate frame  .
         kind, type str: can be either 'First' of 'All'. 'First' downloads first obs, and is recomended for testing. 'All' downloads
@@ -170,7 +170,7 @@ def KeplerTest():
     print('Kepler Planet Disposition ', Dispo)
     Period = DataObject.IdData['koi_period'][DataObject.IdData['WrapperId'] == ID].values[0]
     Time_startbk = DataObject.IdData['koi_time0bk'][DataObject.IdData['WrapperId'] == ID].values[0]
-    ID_Observation = DataObject.GatherIdLcData(id=ID, kind='First')
+    ID_Observation = DataObject.GatherIdLcData(id=ID, kind='All')
     ID_Observation = lk.LightCurveCollection.stitch(ID_Observation)
     ID_Observation_Folded = ID_Observation.fold(period=Period, epoch_time=Time_startbk)
     ID_Observation_Folded.plot()

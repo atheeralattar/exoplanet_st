@@ -21,7 +21,4 @@ input_ids
 #Predict(mission = 'Kepler', ID=10811496)
 if st.sidebar.button('Run ExoMiner Raw Model'):
     #Predict.Predict(selected_mission, selected_id)
-    Predict(mission = 'Kepler', ID=10811496)
-
-
-
+    st.write(Predict(mission = 'Kepler', ID=10811496))
