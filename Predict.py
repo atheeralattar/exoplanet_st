@@ -95,16 +95,15 @@ def Predict(mission,ID):
         f7=m.ReshapeEnsureNotNan(data['StellarParamsScalars'], shape=(1, 6)),  # Stellar parameters
         f8=m.ReshapeEnsureNotNan(data['DVDiagnosticScalars'], shape=(1, 6)) ) # DV Diagnostics
 
-
+    new_line = '\n'
     if(output1 >.5 and output2 >.5):
-        return 'Conf'
+        return f'Final Prediction: Confirmed (Oversampling Score: {output1[0][0]}, Undersamping Score {output2[0][0]}'
     else:
-        return 'Unk'
+        return f'Final Prediction: Unknown (Oversampling Score: {output1[0][0]}, Undersamping Score {output2[0][0]}'
 
 
 if __name__=='__main__':
     #prediciton = Predict(mission = 'Kepler', ID=10811496)
-    prediciton = Predict(mission = 'Kepler', ID=10797460
-)
-#   prediciton = Predict(mission = 'TESS', ID="TIC 369960846")
-    print(prediciton)
+    #prediciton = Predict(mission = 'Kepler', ID=10797460)
+   prediciton = Predict(mission = 'TESS', ID="TIC 169904935")
+   print(prediciton)

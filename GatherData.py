@@ -163,9 +163,9 @@ class GatherData():
 
 
 
-def KeplerTest():
+def KeplerTest(ID):
     DataObject = GatherData(mission='Kepler')
-    ID = 10419211
+    #ID = 10419211
     Dispo =DataObject.IdData['WrapperDispo'][DataObject.IdData['WrapperId'] == ID].values[0]
     print('Kepler Planet Disposition ', Dispo)
     Period = DataObject.IdData['koi_period'][DataObject.IdData['WrapperId'] == ID].values[0]
@@ -174,12 +174,13 @@ def KeplerTest():
     ID_Observation = lk.LightCurveCollection.stitch(ID_Observation)
     ID_Observation_Folded = ID_Observation.fold(period=Period, epoch_time=Time_startbk)
     ID_Observation_Folded.plot()
-    plt.savefig('KeplerTest_ID_'+str(ID)+'.png')
+    plt.show()
     return None
 
-def TESSTEst():
+def TESSTEst(ID):
     DataObject = GatherData(mission='TESS')
-    ID = DataObject.IdData['WrapperId'][0]
+    #ID = DataObject.IdData['WrapperId'][10]
+    print(ID)
     print('TESS Planet Disposition ', DataObject.IdData['WrapperDispo'][0])
     Period = DataObject.IdData['pl_orbper'][DataObject.IdData['WrapperId'] == ID].values[0]
     Time_start = DataObject.IdData['pl_tranmid'][DataObject.IdData['WrapperId'] == ID].values[0] - 2457000.0 # in BJD so - 2457000.0 for BTJD
@@ -205,8 +206,8 @@ def K2TEst():
 
 
 
-
-if __name__=='__main__':
-    KeplerTest()
-    # TESSTEst()
-    # K2TEst()
+KeplerTest(10419211)
+# if __name__=='__main__':
+#     KeplerTest(10419211)
+#     #TESSTEst()
+#     # K2TEst()
