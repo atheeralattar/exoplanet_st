@@ -30,5 +30,5 @@ if st.sidebar.button('Run ExoMiner Raw Model'):
     import matplotlib.pyplot as plt
     import numpy as np
     fig, ax = plt.subplots()
-    st.pyplot(gd.KeplerTest(10419211))
+    st.pyplot(gd.KeplerTest(selected_id))
 
