@@ -33,6 +33,6 @@ if st.sidebar.button('Run ExoMiner Raw Model'):
         fig, ax = plt.subplots()
         st.pyplot(gd.KeplerTest(selected_id))
     except:
-        st.warning('Unable to fetch data for the selected ID, please select another ID.', icon="⚠️")
+        st.warning('Unable to fetch/process data for the selected ID, please select another ID.', icon="⚠️")
 
 
