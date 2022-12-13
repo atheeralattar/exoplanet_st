@@ -21,14 +21,18 @@ input_ids
 
 #Predict(mission = 'Kepler', ID=10811496)
 if st.sidebar.button('Run ExoMiner Raw Model'):
-    prediction = Predict(selected_mission, selected_id)
-    formatted_prediction = f"<p class=\"colored-font\"> Model output: <span style=\"color: black\"> </span><span style=\"color: green\"> {prediction} </span></p>"
+    try:
+        prediction = Predict(selected_mission, selected_id)
+        formatted_prediction = f"<p class=\"colored-font\"> Model output: <span style=\"color: black\"> </span><span style=\"color: green\"> {prediction} </span></p>"
 
-    st.markdown(formatted_prediction, unsafe_allow_html=True)
-    #st.write(Predict(mission = 'Kepler', ID=10811496))
+        st.markdown(formatted_prediction, unsafe_allow_html=True)
+        #st.write(Predict(mission = 'Kepler', ID=10811496))
 
-    import matplotlib.pyplot as plt
-    import numpy as np
-    fig, ax = plt.subplots()
-    st.pyplot(gd.KeplerTest(selected_id))
+        import matplotlib.pyplot as plt
+        import numpy as np
+        fig, ax = plt.subplots()
+        st.pyplot(gd.KeplerTest(selected_id))
+    except:
+        st.warning('Unable to fetch data for the selected ID, please select another ID.', icon="⚠️")
+
 
