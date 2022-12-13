@@ -7,7 +7,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 mission = ['TESS', 'Kepler']
 st.title('Exoplanet Hunter')
-st.header('A Tool to analyze/validates Exoplanets Data')
+st.header('A Tool to analyze/validate Exoplanet Data')
 
 st.sidebar.title('Choose a starting point')
 selected_mission = st.sidebar.selectbox('',mission)
